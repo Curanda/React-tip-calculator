@@ -4,6 +4,7 @@ import Bill from "./assets/Bill.jsx";
 import Review from "./assets/Review.jsx";
 import Calculator from "./assets/Calculator.jsx";
 import Reset from "./assets/Reset.jsx";
+
 export default function App() {
     const [bill, setBill] = useState(0)
     const [tip1, setTip1] = useState(0)
@@ -19,7 +20,7 @@ export default function App() {
                 <h3>How did your friend like the service?</h3>
             </Review>
             <Calculator tip1={tip1} tip2={tip2} bill={bill}/>
-            <Reset />
+            {bill !== 0 && <Reset />}
         </>
     )
 }
